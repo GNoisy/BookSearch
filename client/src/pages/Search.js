@@ -7,9 +7,8 @@ import Results from '../components/results';
 import { SearchBar } from "../components/searchBar";
 import Container from "react-bootstrap/Container";
 import axios from 'axios';
-import API from "../utils/API"
-import BookDetail from "../components/book-detail"
-import BookContext from "../utils/BookContext"
+import API from "../utils/API";
+import BookDetail from "../components/book-detail";
 
 //pass onChange function from searchBar 
 
@@ -53,7 +52,7 @@ class Search extends React.Component {
             <div>
                 {/* <BookContext.provider value= {this.state}> */}
                 <Container>
-                    <h3>Search Page</h3>
+                <h3 className="heading">Search for a Book</h3>
                 <SearchBar 
                     setValue = {this.setValue}
                     handleClick= {this.handleClick}
@@ -68,7 +67,7 @@ class Search extends React.Component {
                     }
                     return<BookDetail
                         title = {book.volumeInfo.title}
-                        author = {book.volumeInfo.authors[0]}
+                        author = {book.volumeInfo.authors[0]} 
                         image = {img}
                         link = {book.volumeInfo.infoLink}
                         description = {book.volumeInfo.description}
@@ -81,8 +80,7 @@ class Search extends React.Component {
                     ></BookDetail>
                 })}
                 </Container>
-                {/* </BookContext.provider> */}
-                {/* <p>Book Details here</p> */}
+                
             </div>
         )
     }  
